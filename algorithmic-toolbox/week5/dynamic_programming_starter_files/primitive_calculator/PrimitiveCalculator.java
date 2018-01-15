@@ -7,22 +7,6 @@ public class PrimitiveCalculator {
       while (n >= 1) {
           sequence.add(n);
           int[] answ = findMinCount(n);
-          // answ[0] = findMinCount(n-1);
-          // answ[1] = n - 1;
-          // if(n % 3 == 0){
-          //   int cnt = findMinCount(n/3);
-          //   if(answ[0] > cnt){
-          //     answ[0] = cnt;
-          //     answ[1] = n/3;
-          //   }
-          // }
-          // if(n % 2 == 0){
-          //   int cnt = findMinCount(n/2);
-          //   if(answ[0] > cnt){
-          //     answ[0] = cnt;
-          //     answ[1] = n/2;
-          //   }
-          // }
           n = answ[1];
       }
       Collections.reverse(sequence);

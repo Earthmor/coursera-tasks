@@ -1,25 +1,25 @@
-package lollipop.core.array;
+package structures;
 
 public class SimpleArray<T> {
-	
+
 	private Object[] _a;
-	
+
 	private int size;
-	
+
 	private int capacity;
-	
+
 	private static final int DEFAULT_CAPACITY = 10;
-	
+
 	public SimpleArray() {
 		this.capacity = DEFAULT_CAPACITY;
 		this._a = new Object[this.capacity];
 	}
-	
+
 	public SimpleArray(int capacity) {
 		this.capacity = capacity;
 		this._a = new Object[this.capacity];
 	}
-	
+
 	public T get(int i) {
 		if(i < 0 || i >= size) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -28,14 +28,14 @@ public class SimpleArray<T> {
 		final T a = (T)_a[i];
 		return a;
 	}
-	
+
 	public void set(int i, T elem) {
 		if(i < 0 || i >= size) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
 		_a[i] = elem;
 	}
-	
+
 	public void pushBack(T elem) {
 		if(size == capacity) {
 			Object[] _a_new = new Object[capacity*2];
@@ -48,7 +48,7 @@ public class SimpleArray<T> {
 		_a[size] = elem;
 		size = size+1;
 	}
-	
+
 	public void remove(int i) {
 		if(i < 0 || i >= size) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -58,7 +58,7 @@ public class SimpleArray<T> {
 		}
 		size = size-1;
 	}
-	
+
 	public int size() {
 		return size;
 	}
